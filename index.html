@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<script src="index.js"></script>
+<style>
+   
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 32px;
+}
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+}
+ 
+
+div {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 250px;
+}
+input[type="password"]
+
+ {
+    width: 250px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 250px;
+}
+/* Button styling */
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100px;
+    margin-top: 1px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Paragraph styling for "don't have an account?" */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+ a {
+    text-decoration:none;
+    color: #4CAF50;
+}
+
+p a:hover {
+    text-decoration: none;
+}
+
+</style>
+<body>
+    <h1>
+        Login 
+    </h1>
+    <form>
+    
+        <div>
+        <label for="username" >Username</label><br>
+        <input type="text" id="username" placeholder="Username">
+    </div>
+    <div>
+        <label for="Password" >Password</label><br>
+        <input type="password" id = "password" placeholder="Password">
+    </div>
+    <button type="submit">Submit</button>
+   <a href="Regiter.html"> <p>Don't have an account? Create one</p> </a>
+</form>
+
+
+</body>
+</html>
