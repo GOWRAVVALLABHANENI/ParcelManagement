@@ -10,7 +10,7 @@ function handleLogin(event) {
       // Redirect to the home page if credentials are correct
       console.log("Login successful!");
       sessionStorage.setItem("username", username);
-      window.location.href = "Homepage.html"; // Replace "home.html" with your actual home page
+      window.location.href = "Homepage.html";
     } else {
       alert("Invalid username or password");
     }
