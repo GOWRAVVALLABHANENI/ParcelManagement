@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Service</title>
+    <style>
+        /* Basic styling for layout */
+       /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 30px;
+    color: #2c3e50;
+}
+
+/* Form Styling */
+form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+select {
+    background-color: #f9f9f9;
+}
+
+/* Styling for Error Messages */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Read-only Fields */
+.readonly {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Booking Service</h1>
+    <form id="bookingForm"  onsubmit="handleSubmit(event)">
+        <!-- Sender Information-->
+        <div class="form-group">
+            <label for="senderName">Sender Name:</label>
+            <input type="text" id="senderName" class="readonly" readonly>
+        </div>
+        <div class="form-group">
+            <label for="senderAddress">Sender Address:</label>
+            <input type="text" id="senderAddress" class="readonly" readonly>
+        </div>
+        <div class="form-group">
+            <label for="senderContact">Sender Contact:</label>
+            <input type="text" id="senderContact" class="readonly" readonly>
+        </div>
+
+        <!-- Receiver Information -->
+        <div class="form-group">
+            <label for="receiverName">Receiver Name:</label>
+            <input type="text" id="receiverName" required>
+            <span class="error" id="receiverNameError"></span>
+        </div>
+        <div class="form-group">
+            <label for="receiverAddress">Receiver Address:</label>
+            <input type="text" id="receiverAddress" required>
+            <span class="error" id="receiverAddressError"></span>
+        </div>
+        <div class="form-group">
+            <label for="receiverPin">Receiver Pin Code:</label>
+            <input type="text" id="receiverPin" required>
+            <span class="error" id="receiverPinError"></span>
+        </div>
+        <div class="form-group">
+            <label for="receiverContact">Receiver Contact:</label>
+            <input type="text" id="receiverContact" required>
+            <span class="error" id="receiverContactError"></span>
+        </div>
+
+        <!-- Parcel Details -->
+        <div class="form-group">
+            <label for="parcelSize">Parcel Size:</label>
+            <select id="parcelSize" required>
+                <option value="">Select Size</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <span class="error" id="parcelSizeError"></span>
+        </div>
+        <div class="form-group">
+            <label for="parcelWeight">Parcel Weight (kg):</label>
+            <input type="number" id="parcelWeight" required>
+            <span class="error" id="parcelWeightError"></span>
+        </div>
+        <div class="form-group">
+            <label for="parcelContents">Contents Description:</label>
+            <textarea id="parcelContents" required></textarea>
+            <span class="error" id="parcelContentsError"></span>
+        </div>
+
+        <!-- Shipping Options -->
+        <div class="form-group">
+            <label for="shippingSpeed">Delivery Speed:</label>
+            <select id="shippingSpeed" required>
+                <option value="">Select Speed</option>
+                <option value="standard">Standard</option>
+                <option value="express">Express</option>
+            </select>
+            <span class="error" id="shippingSpeedError"></span>
+        </div>
+        <div class="form-group">
+            <label for="packaging">Packaging Preference:</label>
+            <select id="packaging" required>
+                <option value="">Select Packaging</option>
+                <option value="standard">Standard Packaging</option>
+                <option value="custom">Custom Packaging</option>
+                <option value="eco-friendly">Eco-friendly Packaging</option>
+                <option value="fragile">Fragile Item Handling</option>
+            </select>
+            <span class="error" id="packagingError"></span>
+        </div>
+
+        <!-- Date and Time Selection -->
+        <div class="form-group">
+            <label for="pickupDate">Preferred Pickup Date:</label>
+            <input type="date" id="pickupDate" required>
+            <span class="error" id="pickupDateError"></span>
+        </div>
+        <div class="form-group">
+            <label for="pickupTime">Preferred Pickup Time:</label>
+            <input type="time" id="pickupTime" required>
+            <span class="error" id="pickupTimeError"></span>
+        </div>
+
+        <!-- Service Cost and Payment -->
+        <div class="form-group">
+            <label for="paymentMethod">Payment Method:</label>
+            <select id="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+            </select>
+            <span class="error" id="paymentMethodError"></span>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="form-group">
+            <label for="insurance">Insurance:</label>
+            <input type="checkbox" id="insurance">
+            <span class="error" id="insuranceError"></span>
+        </div>
+        <div class="form-group">
+            <label for="tracking">Tracking Services:</label>
+            <input type="checkbox" id="tracking">
+            <span class="error" id="trackingError"></span>
+        </div>
+
+        <button type="submit" class="btn">Submit Booking</button>
+    </form>
+
+    <script src="booking.js"></script>
+</body>
+</html>
