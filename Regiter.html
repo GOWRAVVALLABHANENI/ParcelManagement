@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <script src="register.js"></script>
+</head>
+<style>
+    /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Form container */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form elements */
+label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 6px;
+    display: block;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 450px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+</style>
+<body>
+    <h2>Customer Registration</h2>
+    <form id="registrationForm" action="/index.html" method="POST">
+        <label for="customerName">Name:</label><br>
+        <input type="text" id="customerName" name="customerName" required><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="mobile">Mobile:</label><br>
+        <input type="text" id="mobile" name="mobile" required><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="userId">Username:</label><br>
+        <input type="text" id="userId" name="userId" required><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <label for="password">Confirm Password:</label><br>
+        <input type="password" id="confirmpassword" name="password" required><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <div id="errorMessages" style="color:red;"></div>
+   
+</body>
+</html>
