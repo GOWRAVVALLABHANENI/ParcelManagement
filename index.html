@@ -113,7 +113,7 @@ p a:hover {
     <h1>
         Login 
     </h1>
-    <form>
+    <form onsubmit="handleLogin(event)">
     
         <div>
         <label for="username" >Username</label><br>
@@ -121,7 +121,7 @@ p a:hover {
     </div>
     <div>
         <label for="Password" >Password</label><br>
-        <input type="password" id = "password" placeholder="Password">
+        <input type="password" name = "password" id = "password" placeholder="Password">
     </div>
     <button type="submit">Submit</button>
    <a href="Regiter.html"> <p>Don't have an account? Create one</p> </a>
