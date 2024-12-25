@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .payment-form {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-red {
+            background-color: red;
+        }
+        .btn-red:hover {
+            background-color: darkred;
+        }
+        .message {
+            display: none;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header with user info and logout button -->
+    <div class="header">
+        <div>Welcome, <span id="usernameDisplay"></span></div>
+        <button class="btn btn-red" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Payment Details -->
+    <div class="payment-details">
+        <h3>Payment Page</h3>
+        <div class="form-group">
+            <label for="billAmount">Bill Amount:</label>
+            <input type="text" id="billAmount" value="1000" readonly>
+        </div>
+        <div class="form-group">
+            <label for="paymentMode">Mode of Payment:</label>
+            <select id="paymentMode">
+                <option value="debit">Debit Card</option>
+                <option value="credit">Credit Card</option>
+            </select>
+        </div>
+        <button class="btn" onclick="goToCardDetails()">Pay Now</button>
+        <button class="btn" onclick="backToHome()">Back to Home</button>
+    </div>
+
+    <div id="cardDetailsForm" class="payment-form" style="display:none;">
+        <h3>Enter Credit Card Details</h3>
+        <div class="form-group">
+            <label for="cardNo">Card Number:</label>
+            <input type="text" id="cardNo" maxlength="16" placeholder="Enter 16 digit card number">
+        </div>
+        <div class="form-group">
+            <label for="cardHolderName">Card Holder Name:</label>
+            <input type="text" id="cardHolderName" placeholder="Enter card holder name">
+        </div>
+        <div class="form-group">
+            <label for="expiryDate">Expiry Date (MM/YY):</label>
+            <input type="text" id="expiryDate" placeholder="MM/YY">
+        </div>
+        <div class="form-group">
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" maxlength="3" placeholder="Enter CVV">
+        </div>
+        <button class="btn" onclick="makePayment()">Make Payment</button>
+    </div>
+
+    <!-- Payment Successful Message -->
+    <div id="paymentMessage" class="message"></div>
+</div>
+<script src = "paymentpage.js"></script>
+</body>
+</html>
