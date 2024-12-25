@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Invoice Details -->
+    <div class="content">
+        <h2>Payment Successful</h2>
+        <p>Booking ID: <span id = "BookingId"></span></p>
+        <p>Thank you for your payment! Your booking is confirmed.</p>
+
+        <button class="btn" onclick="goToHomePage()">Back to Home</button>
+    </div>
+
+    <script>
+        const bookingId = sessionStorage.getItem("bookingId");
+
+     const Id = document.getElementById("BookingId");
+     if (Id) {
+         Id.textContent = ` ${bookingId}`;
+     }
+ 
+        function goToHomePage() {
+            window.location.href = "Homepage.html"; // Redirect to home page
+        }
+    </script>
+</body>
+</html>
