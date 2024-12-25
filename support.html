@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Support</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            text-align: right;
+        }
+        .header span {
+            margin-right: 20px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .logout-btn {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .logout-btn:hover {
+            background-color: darkred;
+        }
+        .contact-info {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with username and logout -->
+    <div class="header">
+        <span>Welcome, <span id="usernameDisplay"></span></span>
+        <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- Contact Information for Support -->
+    <div class="content">
+        <h2>Contact Us for Queries or Complaints</h2>
+        <div class="contact-info">
+            <p><strong>Contact Number:</strong> 123-456-7890</p>
+            <p><strong>Email ID:</strong> support@example.com</p>
+            <p><strong>Address:</strong> 123 Support St, Hyderabad, India</p>
+        </div>
+    </div>
+    <script src ="support.js"></script>
+    </body>
+    </html>
