@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        /* Top bar */
+        .top-bar {
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        /* Content Area */
+        .content {
+            margin-top: 20px;
+        }
+        .welcome {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        /* Buttons */
+        .menu-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+        }
+        .menu-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top bar with menu -->
+    <div class="top-bar">
+        <div>
+            <a href="#" id="homeLink">Home</a>
+            <a href="#" id="bookingLink">Booking Service</a>
+            <a href="#" id="trackingLink">Tracking</a>
+            <a href="#" id="previousBookingLink">Previous Booking</a>
+            <a href="#" id="contactLink">Contact Support</a>
+        </div>
+        <div id="welcomeMessage" class="welcome">
+            Welcome, <span id="usernameDisplay"></span>
+        </div>
+        <div>
+            <button class="menu-btn" id="logoutButton">Logout</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Home page content -->
+        <h2>Welcome to the Home Page</h2>
+        <p>Use the top bar to navigate to different sections.</p>
+    </div>
+    <script src="homepage.js"></script>
+</body>
+</html>
