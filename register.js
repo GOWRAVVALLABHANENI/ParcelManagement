@@ -60,7 +60,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
         .then(data => {
             if (data.success) {
                 alert('Registration successful!');
-                window.location.href = 'index.html';  // Redirect to login page
+                window.location.href = '/index.html';  // Redirect to login page
             } else {
                 alert('Registration failed: ' + data.message);
             }
