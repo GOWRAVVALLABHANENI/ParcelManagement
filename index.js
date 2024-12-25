@@ -6,7 +6,7 @@ function handleLogin(event) {
     const password = document.getElementById("password").value;
 
     // Check if the credentials are correct (simple example)
-    if (username === "username" && password === "password") {
+    if (username === "username" && password === "asdfqwerlk") {
       // Redirect to the home page if credentials are correct
       console.log("Login successful!");
       sessionStorage.setItem("username", username);
